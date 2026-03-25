@@ -1,0 +1,141 @@
+{
+  "intersection_id": "INT_001",
+  "timestamp": 1774447577.1585085,
+  "source": "..\\Dev1 pipeline\\img with emergency.avif",
+  "normal_vehicles_count": 12,
+  "emergency_vehicles_count": 1,
+  "detections": [
+    {
+      "type": "emergency_vehicle",
+      "subtype": "ambulance",
+      "subtype_confidence": 0.99,
+      "bbox": [
+        440,
+        341,
+        1040,
+        773
+      ],
+      "confidence": 0.99
+    },
+    {
+      "type": "normal_vehicle",
+      "bbox": [
+        0,
+        0,
+        208,
+        144
+      ],
+      "confidence": 0.99
+    },
+    {
+      "type": "normal_vehicle",
+      "bbox": [
+        400,
+        0,
+        768,
+        90
+      ],
+      "confidence": 0.99
+    },
+    {
+      "type": "normal_vehicle",
+      "bbox": [
+        992,
+        17,
+        1440,
+        360
+      ],
+      "confidence": 0.99
+    },
+    {
+      "type": "normal_vehicle",
+      "bbox": [
+        1024,
+        233,
+        1456,
+        530
+      ],
+      "confidence": 0.99
+    },
+    {
+      "type": "normal_vehicle",
+      "bbox": [
+        576,
+        233,
+        992,
+        540
+      ],
+      "confidence": 0.99
+    },
+    {
+      "type": "normal_vehicle",
+      "bbox": [
+        80,
+        414,
+        512,
+        746
+      ],
+      "confidence": 0.99
+    },
+    {
+      "type": "normal_vehicle",
+      "bbox": [
+        927,
+        387,
+        1488,
+        773
+      ],
+      "confidence": 0.99
+    },
+    {
+      "type": "normal_vehicle",
+      "bbox": [
+        0,
+        665,
+        112,
+        873
+      ],
+      "confidence": 0.99
+    },
+    {
+      "type": "normal_vehicle",
+      "bbox": [
+        0,
+        719,
+        432,
+        900
+      ],
+      "confidence": 0.99
+    },
+    {
+      "type": "normal_vehicle",
+      "bbox": [
+        880,
+        648,
+        1440,
+        900
+      ],
+      "confidence": 0.99
+    },
+    {
+      "type": "normal_vehicle",
+      "bbox": [
+        1408,
+        486,
+        1600,
+        810
+      ],
+      "confidence": 0.99
+    },
+    {
+      "type": "normal_vehicle",
+      "bbox": [
+        1376,
+        648,
+        1600,
+        900
+      ],
+      "confidence": 0.99
+    }
+  ]
+}

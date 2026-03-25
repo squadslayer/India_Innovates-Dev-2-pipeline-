@@ -1,5 +1,5 @@
 """
-Dev 2 — Pipeline Tests
+Dev 2 - Pipeline Tests
 Validates each phase and end-to-end pipeline with sample data.
 """
 
@@ -25,9 +25,9 @@ from output_api import OutputAPI
 from pipeline import SynapseSignalPipeline
 
 
-# ═══════════════════════════════════════════════════════════
+# ===========================================================
 # Sample Dev 1 Output (what Dev 1 actually produces)
-# ═══════════════════════════════════════════════════════════
+# ===========================================================
 
 SAMPLE_FRAME_1 = {
     "timestamp": 1774280454.0,
@@ -90,7 +90,7 @@ SAMPLE_FRAME_2 = {
 
 def test_phase1_detection_ingestion():
     """Test Phase 1: Detection Ingestion."""
-    print("TEST: Phase 1 — Detection Ingestion")
+    print("TEST: Phase 1 - Detection Ingestion")
     ingestor = DetectionIngestor()
 
     frame = ingestor.ingest(SAMPLE_FRAME_1)
@@ -113,12 +113,12 @@ def test_phase1_detection_ingestion():
     assert len(summary_frame.objects) == 0
     assert summary_frame.normal_count == 10
 
-    print("  ✅ PASSED\n")
+    print("  [X] PASSED\n")
 
 
 def test_phase2_tracker():
     """Test Phase 2: Multi-Object Tracking."""
-    print("TEST: Phase 2 — Multi-Object Tracking")
+    print("TEST: Phase 2 - Multi-Object Tracking")
     ingestor = DetectionIngestor()
     tracker = MultiObjectTracker(track_activation_threshold=0.05, lost_track_buffer=30)
 
@@ -137,7 +137,7 @@ def test_phase2_tracker():
 
     print(f"  Frame 1: {len(tracks1)} tracks")
     print(f"  Frame 2: {len(tracks2)} tracks")
-    print("  ✅ PASSED\n")
+    print("  [X] PASSED\n")
 
 
 def test_iou():
@@ -153,12 +153,12 @@ def test_iou():
     iou = compute_iou([0, 0, 10, 10], [5, 5, 15, 15])
     assert 0.1 < iou < 0.2, f"Expected ~0.143, got {iou}"
 
-    print("  ✅ PASSED\n")
+    print("  [X] PASSED\n")
 
 
 def test_phase3_lane_mapper():
     """Test Phase 3: Lane Mapping."""
-    print("TEST: Phase 3 — Lane Mapping")
+    print("TEST: Phase 3 - Lane Mapping")
 
     # Test point_in_polygon
     square = [[0, 0], [100, 0], [100, 100], [0, 100]]
@@ -177,19 +177,19 @@ def test_phase3_lane_mapper():
 
     # Ambulance centroid (744, 557) — should be in a lane
     lane = lane_mapper.assign_lane((744, 557))
-    print(f"  Ambulance (744, 557) → lane: {lane}")
+    print(f"  Ambulance (744, 557) -> lane: {lane}")
     # Should be assigned to some lane
 
     # Car at (112, 72) — top-left, should be WEST_OUT or NORTH_IN
     lane2 = lane_mapper.assign_lane((112, 72))
-    print(f"  Car (112, 72) → lane: {lane2}")
+    print(f"  Car (112, 72) -> lane: {lane2}")
 
-    print("  ✅ PASSED\n")
+    print("  [X] PASSED\n")
 
 
 def test_phase4_lane_metrics():
     """Test Phase 4: Lane Metrics."""
-    print("TEST: Phase 4 — Lane Metrics")
+    print("TEST: Phase 4 - Lane Metrics")
     computer = LaneMetricsComputer(stopped_speed_threshold=5.0)
 
     # Create mock lane assignments
@@ -214,12 +214,12 @@ def test_phase4_lane_metrics():
 
     print(f"  NORTH_IN: density={metrics['NORTH_IN'].in_density}, "
           f"queue={metrics['NORTH_IN'].queue_length}")
-    print("  ✅ PASSED\n")
+    print("  [X] PASSED\n")
 
 
 def test_phase7_sector_aggregation():
     """Test Phase 7: Sector Aggregation."""
-    print("TEST: Phase 7 — Sector Aggregation")
+    print("TEST: Phase 7 - Sector Aggregation")
 
     from modules.lane_metrics import LaneMetrics
     
@@ -243,12 +243,12 @@ def test_phase7_sector_aggregation():
 
     print(f"  NORTH_SOUTH: density={results['NORTH_SOUTH'].aggregated_density}")
     print(f"  EAST_WEST: density={results['EAST_WEST'].aggregated_density}")
-    print("  ✅ PASSED\n")
+    print("  [X] PASSED\n")
 
 
 def test_phase9_graph():
     """Test Phase 9: Graph Construction."""
-    print("TEST: Phase 9 — Graph Construction")
+    print("TEST: Phase 9 - Graph Construction")
 
     config_path = os.path.join(
         os.path.dirname(os.path.abspath(__file__)),
@@ -267,12 +267,12 @@ def test_phase9_graph():
 
     graph_dict = graph.to_dict()
     print(f"  Nodes: {len(graph_dict['nodes'])}, Edges: {len(graph_dict['edges'])}")
-    print("  ✅ PASSED\n")
+    print("  [X] PASSED\n")
 
 
 def test_phase11_routing():
     """Test Phase 11: Route Engine."""
-    print("TEST: Phase 11 — Route Engine")
+    print("TEST: Phase 11 - Route Engine")
 
     config_path = os.path.join(
         os.path.dirname(os.path.abspath(__file__)),
@@ -290,9 +290,9 @@ def test_phase11_routing():
     assert route.path[-1] == "INT_003"
     assert route.total_distance > 0
 
-    print(f"  Route: {' → '.join(route.path)}")
+    print(f"  Route: {' -> '.join(route.path)}")
     print(f"  Distance: {route.total_distance}m, Time: {route.estimated_time:.1f}s")
-    print("  ✅ PASSED\n")
+    print("  [X] PASSED\n")
 
 
 def test_end_to_end():
@@ -335,7 +335,7 @@ def test_end_to_end():
     print(f"  sectors: {len(output['sectors'])}")
     print(f"  emergency: {output['emergency_state']}")
     print(f"  routes: {len(output['routes'])}")
-    print(f"\n  ✅ END-TO-END PASSED\n")
+    print(f"\n  [X] END-TO-END PASSED\n")
 
     return output
 
@@ -343,9 +343,9 @@ def test_end_to_end():
 def run_all_tests():
     """Run all tests."""
     print()
-    print("╔══════════════════════════════════════════════╗")
-    print("║   DEV 2 — PIPELINE TESTS                    ║")
-    print("╚══════════════════════════════════════════════╝")
+    print("+" + "-" * 46 + "+")
+    print("|   DEV 2 - PIPELINE TESTS                    |")
+    print("+" + "-" * 46 + "+")
     print()
 
     test_phase1_detection_ingestion()
@@ -358,9 +358,9 @@ def run_all_tests():
     test_phase11_routing()
     output = test_end_to_end()
 
-    print("╔══════════════════════════════════════════════╗")
-    print("║   ALL TESTS PASSED ✅                        ║")
-    print("╚══════════════════════════════════════════════╝")
+    print("+" + "-" * 46 + "+")
+    print("|   ALL TESTS PASSED [X]                      |")
+    print("+" + "-" * 46 + "+")
     print()
 
     return output

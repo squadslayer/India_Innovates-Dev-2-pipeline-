@@ -5,7 +5,20 @@ Includes intersection state + city-level state + routes.
 """
 
 import json
+import numpy as np
 from typing import Dict, List, Optional
+
+
+class NumpyEncoder(json.JSONEncoder):
+    """Custom JSON encoder for NumPy types."""
+    def default(self, obj):
+        if isinstance(obj, np.integer):
+            return int(obj)
+        elif isinstance(obj, np.floating):
+            return float(obj)
+        elif isinstance(obj, np.ndarray):
+            return obj.tolist()
+        return super(NumpyEncoder, self).default(obj)
 
 
 class OutputAPI:
@@ -71,11 +84,11 @@ class OutputAPI:
 
     @staticmethod
     def to_json(output: dict, indent: int = 2) -> str:
-        """Serialize output to JSON string."""
-        return json.dumps(output, indent=indent)
+        """Serialize output to JSON string with NumPy support."""
+        return json.dumps(output, indent=indent, cls=NumpyEncoder)
 
     @staticmethod
     def save_to_file(output: dict, filepath: str):
-        """Save output to a JSON file."""
+        """Save output to a JSON file with NumPy support."""
         with open(filepath, "w") as f:
-            json.dump(output, f, indent=2)
+            json.dump(output, f, indent=2, cls=NumpyEncoder)

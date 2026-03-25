@@ -44,6 +44,7 @@ class FrameData:
     timestamp: float
     normal_count: int
     emergency_count: int
+    intersection_id: str = "INT_001"
     objects: List[DetectedObject] = field(default_factory=list)
 
 
@@ -66,11 +67,14 @@ class DetectionIngestor:
 
         # Handle both 'timestamp' and 'time_offset' fields
         timestamp = dev1_json.get("timestamp", dev1_json.get("time_offset", 0.0))
-        normal_count = dev1_json.get("normal_count", 0)
-        emergency_count = dev1_json.get("emergency_count", 0)
+        
+        # Support both old and new Dev 1 keys
+        normal_count = dev1_json.get("normal_count", dev1_json.get("normal_vehicles_count", 0))
+        emergency_count = dev1_json.get("emergency_count", dev1_json.get("emergency_vehicles_count", 0))
 
         objects = []
-        details = dev1_json.get("details", [])
+        # Support both 'details' and 'detections'
+        details = dev1_json.get("details", dev1_json.get("detections", []))
 
         for det in details:
             obj = DetectedObject(
@@ -88,6 +92,7 @@ class DetectionIngestor:
             timestamp=timestamp,
             normal_count=normal_count,
             emergency_count=emergency_count,
+            intersection_id=dev1_json.get("intersection_id", "INT_001"),
             objects=objects,
         )
 
