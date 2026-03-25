@@ -1,0 +1,358 @@
+{
+  "intersection_id": "INT_001",
+  "timestamp": 1774280454.1098087,
+  "lanes": [
+    {
+      "lane_id": "NORTH_IN",
+      "in_density": 1,
+      "avg_speed": 0.0,
+      "queue_length": 1,
+      "vehicle_ids": [
+        7
+      ],
+      "out_density": 1,
+      "capacity": 15
+    },
+    {
+      "lane_id": "SOUTH_IN",
+      "in_density": 2,
+      "avg_speed": 0.0,
+      "queue_length": 2,
+      "vehicle_ids": [
+        1,
+        11
+      ],
+      "out_density": 1,
+      "capacity": 15
+    },
+    {
+      "lane_id": "EAST_IN",
+      "in_density": 4,
+      "avg_speed": 0.0,
+      "queue_length": 4,
+      "vehicle_ids": [
+        5,
+        8,
+        9,
+        13
+      ],
+      "out_density": 1,
+      "capacity": 12
+    },
+    {
+      "lane_id": "WEST_IN",
+      "in_density": 1,
+      "avg_speed": 0.0,
+      "queue_length": 1,
+      "vehicle_ids": [
+        6
+      ],
+      "out_density": 1,
+      "capacity": 12
+    },
+    {
+      "lane_id": "NORTH_OUT",
+      "in_density": 1,
+      "avg_speed": 0.0,
+      "queue_length": 1,
+      "vehicle_ids": [
+        3
+      ],
+      "out_density": 0,
+      "capacity": 0
+    },
+    {
+      "lane_id": "SOUTH_OUT",
+      "in_density": 1,
+      "avg_speed": 0.0,
+      "queue_length": 1,
+      "vehicle_ids": [
+        12
+      ],
+      "out_density": 0,
+      "capacity": 0
+    },
+    {
+      "lane_id": "EAST_OUT",
+      "in_density": 1,
+      "avg_speed": 0.0,
+      "queue_length": 1,
+      "vehicle_ids": [
+        14
+      ],
+      "out_density": 0,
+      "capacity": 0
+    },
+    {
+      "lane_id": "WEST_OUT",
+      "in_density": 1,
+      "avg_speed": 0.0,
+      "queue_length": 1,
+      "vehicle_ids": [
+        2
+      ],
+      "out_density": 0,
+      "capacity": 0
+    }
+  ],
+  "sectors": [
+    {
+      "sector_id": "NORTH_SOUTH",
+      "lanes": [
+        "NORTH_IN",
+        "SOUTH_IN",
+        "NORTH_OUT",
+        "SOUTH_OUT"
+      ],
+      "aggregated_density": 5,
+      "avg_speed": 0.0,
+      "total_queue": 5
+    },
+    {
+      "sector_id": "EAST_WEST",
+      "lanes": [
+        "EAST_IN",
+        "WEST_IN",
+        "EAST_OUT",
+        "WEST_OUT"
+      ],
+      "aggregated_density": 7,
+      "avg_speed": 0.0,
+      "total_queue": 7
+    }
+  ],
+  "emergency_state": {
+    "active": true,
+    "count": 1,
+    "vehicles": [
+      {
+        "track_id": 1,
+        "vehicle_type": "ambulance",
+        "lane_id": "SOUTH_IN",
+        "centroid": [
+          744,
+          557
+        ],
+        "velocity": 0.0
+      }
+    ]
+  },
+  "city_state": {
+    "nodes": [
+      {
+        "node_id": "INT_001",
+        "name": "Main Junction",
+        "latitude": 21.1458,
+        "longitude": 79.0882,
+        "state": {
+          "intersection_id": "INT_001",
+          "timestamp": 1774280454.1098087,
+          "lanes": [
+            {
+              "lane_id": "NORTH_IN",
+              "in_density": 1,
+              "avg_speed": 0.0,
+              "queue_length": 1,
+              "vehicle_ids": [
+                7
+              ],
+              "out_density": 1,
+              "capacity": 15
+            },
+            {
+              "lane_id": "SOUTH_IN",
+              "in_density": 2,
+              "avg_speed": 0.0,
+              "queue_length": 2,
+              "vehicle_ids": [
+                1,
+                11
+              ],
+              "out_density": 1,
+              "capacity": 15
+            },
+            {
+              "lane_id": "EAST_IN",
+              "in_density": 4,
+              "avg_speed": 0.0,
+              "queue_length": 4,
+              "vehicle_ids": [
+                5,
+                8,
+                9,
+                13
+              ],
+              "out_density": 1,
+              "capacity": 12
+            },
+            {
+              "lane_id": "WEST_IN",
+              "in_density": 1,
+              "avg_speed": 0.0,
+              "queue_length": 1,
+              "vehicle_ids": [
+                6
+              ],
+              "out_density": 1,
+              "capacity": 12
+            },
+            {
+              "lane_id": "NORTH_OUT",
+              "in_density": 1,
+              "avg_speed": 0.0,
+              "queue_length": 1,
+              "vehicle_ids": [
+                3
+              ],
+              "out_density": 0,
+              "capacity": 0
+            },
+            {
+              "lane_id": "SOUTH_OUT",
+              "in_density": 1,
+              "avg_speed": 0.0,
+              "queue_length": 1,
+              "vehicle_ids": [
+                12
+              ],
+              "out_density": 0,
+              "capacity": 0
+            },
+            {
+              "lane_id": "EAST_OUT",
+              "in_density": 1,
+              "avg_speed": 0.0,
+              "queue_length": 1,
+              "vehicle_ids": [
+                14
+              ],
+              "out_density": 0,
+              "capacity": 0
+            },
+            {
+              "lane_id": "WEST_OUT",
+              "in_density": 1,
+              "avg_speed": 0.0,
+              "queue_length": 1,
+              "vehicle_ids": [
+                2
+              ],
+              "out_density": 0,
+              "capacity": 0
+            }
+          ],
+          "sectors": [
+            {
+              "sector_id": "NORTH_SOUTH",
+              "lanes": [
+                "NORTH_IN",
+                "SOUTH_IN",
+                "NORTH_OUT",
+                "SOUTH_OUT"
+              ],
+              "aggregated_density": 5,
+              "avg_speed": 0.0,
+              "total_queue": 5
+            },
+            {
+              "sector_id": "EAST_WEST",
+              "lanes": [
+                "EAST_IN",
+                "WEST_IN",
+                "EAST_OUT",
+                "WEST_OUT"
+              ],
+              "aggregated_density": 7,
+              "avg_speed": 0.0,
+              "total_queue": 7
+            }
+          ],
+          "emergency_state": {
+            "active": true,
+            "count": 1,
+            "vehicles": [
+              {
+                "track_id": 1,
+                "vehicle_type": "ambulance",
+                "lane_id": "SOUTH_IN",
+                "centroid": [
+                  744,
+                  557
+                ],
+                "velocity": 0.0
+              }
+            ]
+          }
+        }
+      },
+      {
+        "node_id": "INT_002",
+        "name": "North Square",
+        "latitude": 21.1505,
+        "longitude": 79.0882
+      },
+      {
+        "node_id": "INT_003",
+        "name": "East Cross",
+        "latitude": 21.1458,
+        "longitude": 79.0935
+      }
+    ],
+    "edges": [
+      {
+        "edge_id": "R001",
+        "from": "INT_001",
+        "to": "INT_002",
+        "distance": 500,
+        "vehicle_count": 0,
+        "avg_speed": 0.0,
+        "congestion_level": "low"
+      },
+      {
+        "edge_id": "R002",
+        "from": "INT_001",
+        "to": "INT_003",
+        "distance": 350,
+        "vehicle_count": 0,
+        "avg_speed": 0.0,
+        "congestion_level": "low"
+      },
+      {
+        "edge_id": "R003",
+        "from": "INT_002",
+        "to": "INT_003",
+        "distance": 400,
+        "vehicle_count": 0,
+        "avg_speed": 0.0,
+        "congestion_level": "low"
+      }
+    ]
+  },
+  "routes": [
+    {
+      "route_id": "INT_001_to_INT_002_opt1",
+      "path": [
+        "INT_001",
+        "INT_002"
+      ],
+      "total_distance": 500,
+      "avg_congestion": 0.2,
+      "estimated_time": 66.69
+    },
+    {
+      "route_id": "INT_001_to_INT_003_opt1",
+      "path": [
+        "INT_001",
+        "INT_003"
+      ],
+      "total_distance": 350,
+      "avg_congestion": 0.2,
+      "estimated_time": 46.69
+    }
+  ],
+  "emergency_position": {
+    "lat": 21.147368,
+    "lon": 79.09059,
+    "velocity": 0.0
+  }
+}
